@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Android-Edi</string>
+<<<<<<< HEAD
     <string name="Bienvenida">Bienvenidos</string>
     <string name="Saludo"> q + v </string>
+=======
+    <string name = "Bienvenida">Bienvenidos</string>
+    <string name = "Saludo"> q + v </string>
+>>>>>>> desarrollo
 </resources>
