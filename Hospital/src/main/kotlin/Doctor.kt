@@ -1,7 +1,7 @@
 import java.util.*
 
 class Doctor (
-    private val id: Int,
+    private var id: String,
     private val nombre: String,
     private val fechaNacimiento: Date,
     private val correoElectronico: String,
