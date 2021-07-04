@@ -2,5 +2,8 @@
 <resources>
     <string name ="bienvenida"> Welcome</string>
     <string name="Saludo">Dragon Ball</string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> desarrollo
 </resources>
