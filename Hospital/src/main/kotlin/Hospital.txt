@@ -1,0 +1,7 @@
+ListaHospital(nomina=[ 
+ Hospital(id='16', nombre='Hospital Eugenio Espejo', direccion='Alameda - 12  de octubre ', numeroTelefono='3102012', nomina=[
+ Doctor(id='158', cedula='1726381894', nombre='Edison Quimbiamba', telefono=9787454, direccion='Magdalena ', sueldo=800.0, fechaNacimiento=Tue Sep 05 00:00:00 COT 1995, casado=false)
+]) 
+ ,  
+ Hospital(id='56', nombre='VacaOrtiz', direccion='colon- 6 de Diciembre', numeroTelefono='097874523', nomina=[]) 
+ ])
