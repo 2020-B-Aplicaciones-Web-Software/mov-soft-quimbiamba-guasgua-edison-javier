@@ -18,7 +18,7 @@ class AdaptorEstudiante(
      inner    class MyViewHolder(view: View) :RecyclerView.ViewHolder(view) {
             var codigoTextView :TextView = view.findViewById(R.id.txv_codigoMateria)
             var nombreTextView : TextView = view.findViewById(R.id.txv_nombre)
-            var numeroUnicoTextView : TextView = view.findViewById(R.id.txv_numeroUnico)
+            var numeroUnicoTextView : TextView = view.findViewById(R.id.input_numeroUnico)
             var cedulaTextView: TextView = view.findViewById(R.id.txv_cedula)
             var carreraTextView: TextView = view.findViewById(R.id.txv_carrera)
             var fechaNacimientoTextView: TextView = view.findViewById(R.id.txv_fechaNacimiento)

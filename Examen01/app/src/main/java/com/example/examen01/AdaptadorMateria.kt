@@ -13,7 +13,7 @@ class AdaptadorMateria(
 
 ) : RecyclerView.Adapter<AdaptadorMateria.MyViewHolder>() {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var nombreTextView: TextView = view.findViewById(R.id.txv_numeroUnico)
+        var nombreTextView: TextView = view.findViewById(R.id.input_numeroUnico)
         var codigoTextView: TextView = view.findViewById(R.id.txv_codigoMateria)
         var aulaTextView: TextView = view.findViewById(R.id.txv_carrera)
         var creditosTextView: TextView = view.findViewById(R.id.txv_cedula)

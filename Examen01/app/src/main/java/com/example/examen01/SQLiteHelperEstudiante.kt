@@ -47,7 +47,7 @@ class SQLiteHelperEstudiante(
         nombreEstudiante: String,
         carreraEstudiante: String,
         fechaNacimiento: String,
-        estadoEstudiante: Boolean,
+        estadoEstudiante: String,
     ): Boolean {
         val conexionEscritura = writableDatabase
         val valoresAGuardar = ContentValues()
