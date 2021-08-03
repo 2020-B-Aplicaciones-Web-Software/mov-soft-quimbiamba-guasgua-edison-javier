@@ -5,6 +5,9 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import java.util.*
+import kotlin.collections.ArrayList
+
 class SQLiteHelperEstudiante(
     context: Context
 ) : SQLiteOpenHelper(context, "moviles", null, 1) {
@@ -111,8 +114,62 @@ class SQLiteHelperEstudiante(
     }
 
 
+    fun crearMateria(
+        codigo: String,
+        nombre: String,
+        creditos: String,
+        aula: String,
+    ): Boolean {
+        val conexionEscritura = writableDatabase
+        val valoresAGuardar = ContentValues()
+        valoresAGuardar.put("codigoMateria", codigo)
+        valoresAGuardar.put("nombreMateria", nombre)
+        valoresAGuardar.put("creditosMateria", creditos)
+        valoresAGuardar.put("aulaMateria", aula)
+
+        val resultadoEscritura = conexionEscritura.insert(
+            "Materia", null, valoresAGuardar
+        )
+        conexionEscritura.close()
+        return if (resultadoEscritura.toInt() == -1) false else true
+    }
+
+    fun consultaMateria(): ArrayList<MateriaBDD> {
+        val scriptConsultaMateria = "Select * from materia"
+        val baseDatosLectura = readableDatabase
+        val listaMateria = arrayListOf<MateriaBDD>()
+        val resutadoConsultaLectura = baseDatosLectura.rawQuery(
+            scriptConsultaMateria, null
+        )
+        val existeMateria = resutadoConsultaLectura.moveToFirst()
+        do {
+            if (existeMateria) {
+                val id = resutadoConsultaLectura.getInt(0)
+                val codigo = resutadoConsultaLectura.getString(1)
+                val nombre = resutadoConsultaLectura.getString(2)
+                val creditos = resutadoConsultaLectura.getInt(3)
+                val aula = resutadoConsultaLectura.getString(4)
+
+                if (codigo != null) {
+
+                    listaMateria.add(
+                        MateriaBDD(
+                            id,
+                            codigo, nombre, creditos, aula
+                        )
+                    )
+                }
+            }
+        }while (resutadoConsultaLectura.moveToNext())
+
+        resutadoConsultaLectura.close()
+        baseDatosLectura.close()
+        Log.i("bdd", resutadoConsultaLectura.toString())
+        return listaMateria
+    }
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
+
     }
 
 
