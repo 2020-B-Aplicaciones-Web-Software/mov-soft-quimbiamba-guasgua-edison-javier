@@ -68,7 +68,7 @@ class SQLiteHelperEstudiante(
         return if (resuladoEscritura.toInt() == -1) false else true  // devuelve un 1 si se logra la agregación al la  base de datos
 
     }
-    /////////////////////
+    ///////////////////// consultar  Estudiante
 
     fun consultarEstudiantes(): ArrayList<EstudianteBDD> {
         val scriptUsuario =
@@ -82,7 +82,6 @@ class SQLiteHelperEstudiante(
         val existeEstudiante = resultadoConsulta.moveToFirst() // movemos al primero
         if (existeEstudiante) {
             do {
-
                 val idMateria = resultadoConsulta.getInt(0)
                 val numeroUnico = resultadoConsulta.getString(1)
                 val cedula = resultadoConsulta.getString(2)
@@ -102,7 +101,6 @@ class SQLiteHelperEstudiante(
                             estado
                         )
                     )
-
                 }
             } while (resultadoConsulta.moveToNext())
         }
@@ -111,7 +109,6 @@ class SQLiteHelperEstudiante(
         Log.i("bd", resultadoConsulta.toString())
         return listaEstudiantes
     }
-
 
     fun crearMateria(
         codigo: String,
@@ -125,7 +122,6 @@ class SQLiteHelperEstudiante(
         valoresAGuardar.put("nombreMateria", nombre)
         valoresAGuardar.put("creditosMateria", creditos)
         valoresAGuardar.put("aulaMateria", aula)
-
         val resultadoEscritura = conexionEscritura.insert(
             "Materia", null, valoresAGuardar
         )
@@ -189,8 +185,6 @@ class SQLiteHelperEstudiante(
         nombre:String,
         creditos:Int,
         aula:String,
-
-
     ):Boolean{
        val conexionEscritura = writableDatabase
        val valoresActulizar= ContentValues()
@@ -210,10 +204,11 @@ class SQLiteHelperEstudiante(
         return if(resultadoActulizacion.toInt() == -1) false else true
     }
 
+
+
+
+
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
-
     }
-
-
 }
