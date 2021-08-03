@@ -1,14 +1,10 @@
 package com.example.examen01
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
-import android.widget.Adapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class AdaptadorMateria(
     private val listMateria: ArrayList<MateriaBDD>,
@@ -17,10 +13,10 @@ class AdaptadorMateria(
 
 ) : RecyclerView.Adapter<AdaptadorMateria.MyViewHolder>() {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var nombreTextView: TextView = view.findViewById(R.id.txv_nombreMateria)
+        var nombreTextView: TextView = view.findViewById(R.id.txv_numeroUnico)
         var codigoTextView: TextView = view.findViewById(R.id.txv_codigoMateria)
-        var aulaTextView: TextView = view.findViewById(R.id.txv_aula)
-        var creditosTextView: TextView = view.findViewById(R.id.txv_creditos)
+        var aulaTextView: TextView = view.findViewById(R.id.txv_carrera)
+        var creditosTextView: TextView = view.findViewById(R.id.txv_cedula)
     }
 
 

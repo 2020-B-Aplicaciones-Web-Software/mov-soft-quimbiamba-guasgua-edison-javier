@@ -11,7 +11,7 @@ class EstudianteBDD(
     var cedula: String,
     var nombre: String,
     var carrera:  String,
-    var fechaNacimiento: String?,
+    var fechaNacimiento: String,
     var estado: Boolean
 ):Parcelable{
     constructor(parcel:Parcel): this (
@@ -20,7 +20,7 @@ class EstudianteBDD(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readString(),
+        parcel.readString().toString(),
         parcel.readByte()!= 0.toByte()
             ){
 
