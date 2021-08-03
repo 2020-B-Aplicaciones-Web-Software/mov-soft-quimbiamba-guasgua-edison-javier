@@ -16,13 +16,13 @@ class SQLiteHelperEstudiante(
             """
                 CREATE TABLE ESTUDIANTE(
                 idEstudiante INTEGER PRIMARY KEY AUTOINCREMENT,
-                idMateria    INTEGER     
-                numeroUnicoEstudiante  not null UNIQUE,                           ,
+                idMateria    INTEGER,    
+                numeroUnicoEstudiante  not null UNIQUE,
                 cedulaEstudiante  VARCHAR (10) not null UNIQUE,
                 nombreEstudiante  VARCHAR(50)  not null,      
                 carreraEstudiante VARCHAR(100) not null,
                 fechaNacimiento VARCHAR(200)   not null,
-                estadoEstudiante VARCHAR(15)   bit not null,
+                estadoEstudiante bit not null,
                 CONSTRAINT FK_EST_MATERIA foreign key (idMateria) references materia(idMateria)
                 )
             """.trimIndent()
@@ -32,8 +32,7 @@ class SQLiteHelperEstudiante(
                 codigoMateria   varchar(10)   not null UNIQUE,
                 nombreMateria   varchar(50)   not null,
                 creditosMateria int           not null,
-                aulaMateria     varchar(30)   not null,
-      
+                aulaMateria     varchar(30)   not null
             )
         """.trimIndent()
         db?.execSQL(scriptCrearTablaMateria)
