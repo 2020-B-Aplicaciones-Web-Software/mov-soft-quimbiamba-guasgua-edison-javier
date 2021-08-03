@@ -159,13 +159,57 @@ class SQLiteHelperEstudiante(
                     )
                 }
             }
-        }while (resutadoConsultaLectura.moveToNext())
+        } while (resutadoConsultaLectura.moveToNext())
 
         resutadoConsultaLectura.close()
         baseDatosLectura.close()
         Log.i("bdd", resutadoConsultaLectura.toString())
         return listaMateria
     }
+
+    fun eliminarMateriaPorCodigo(codigo: String): Boolean {
+        val conexionEsctritura = writableDatabase
+        var resultadoEliminacion = conexionEsctritura.delete(
+            "MATERIA",
+            "codigoMateria=?", arrayOf(codigo)
+        )
+        conexionEsctritura.close()
+        return if(resultadoEliminacion.toInt()!=-1){
+            Log.i("bdd", "Materia eliminada -> ${codigo}")
+            true
+        }else{
+            Log.i("bdd", "No se puede eliminar")
+            false
+        }
+    }
+//////////////
+    fun actualizarMateria(
+        id: Int,
+        codigo:String,
+        nombre:String,
+        creditos:Int,
+        aula:String,
+
+
+    ):Boolean{
+       val conexionEscritura = writableDatabase
+       val valoresActulizar= ContentValues()
+       valoresActulizar.put("codigoMateria",codigo)
+        valoresActulizar.put("nombreMateria", nombre)
+        valoresActulizar.put("nombreMateria", creditos)
+        valoresActulizar.put("aulaMateria",aula)
+        val resultadoActulizacion =  conexionEscritura.update(
+            "Materia",
+            valoresActulizar,
+            "idMateria?",
+            arrayOf(
+                id.toString()
+            )
+        )
+        conexionEscritura.close()
+        return if(resultadoActulizacion.toInt() == -1) false else true
+    }
+
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
 

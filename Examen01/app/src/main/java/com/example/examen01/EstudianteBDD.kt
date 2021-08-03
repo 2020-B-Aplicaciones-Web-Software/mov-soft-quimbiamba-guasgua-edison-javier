@@ -3,7 +3,6 @@ package com.example.examen01
 import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
-
 class EstudianteBDD(
 
     var idMateria: Int,
@@ -23,10 +22,7 @@ class EstudianteBDD(
         parcel.readString().toString(),
         parcel.readByte()!= 0.toByte()
             ){
-
-
     }
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(idMateria)
         parcel.writeString(numeroUnico)
@@ -36,7 +32,6 @@ class EstudianteBDD(
         parcel.writeString(fechaNacimiento)
         parcel.writeByte(if (estado) 1 else 0)
     }
-
     override fun describeContents(): Int {
         return 0
     }
@@ -50,6 +45,4 @@ class EstudianteBDD(
             return arrayOfNulls(size)
         }
     }
-
-
 }
