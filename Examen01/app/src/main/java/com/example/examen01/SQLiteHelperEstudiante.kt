@@ -190,12 +190,12 @@ class SQLiteHelperEstudiante(
        val valoresActulizar= ContentValues()
        valoresActulizar.put("codigoMateria",codigo)
         valoresActulizar.put("nombreMateria", nombre)
-        valoresActulizar.put("nombreMateria", creditos)
+        valoresActulizar.put("creditosMateria", creditos)
         valoresActulizar.put("aulaMateria",aula)
         val resultadoActulizacion =  conexionEscritura.update(
             "Materia",
             valoresActulizar,
-            "idMateria?",
+            "idMateria=?",
             arrayOf(
                 id.toString()
             )

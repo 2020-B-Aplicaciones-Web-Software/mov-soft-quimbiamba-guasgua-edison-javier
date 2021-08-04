@@ -32,7 +32,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/input_codigoMateria"
         android:layout_width="158dp"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
@@ -55,7 +55,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
+        android:id="@+id/input_nombreMateria"
         android:layout_width="153dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
@@ -78,7 +78,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText3"
+        android:id="@+id/input_creditosMateria"
         android:layout_width="154dp"
         android:layout_height="45dp"
         android:layout_marginStart="12dp"
@@ -101,7 +101,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText4"
+        android:id="@+id/input_aulaMateria"
         android:layout_width="150dp"
         android:layout_height="52dp"
         android:layout_marginStart="24dp"
@@ -110,7 +110,7 @@
         app:layout_constraintTop_toTopOf="@+id/textInputLayout14" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_actualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
