@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "319169708873",
+    "project_id": "examen2-mov-soft-e-qui-gua",
+    "storage_bucket": "examen2-mov-soft-e-qui-gua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319169708873:android:7d97ae627e089079301098",
+        "android_client_info": {
+          "package_name": "com.example.examen02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319169708873-vo9p96qlo4v2vrsmlctapt6tbhktd9lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC87uKQDp8z3m6iiZx5srdOoG5nyJoRiTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319169708873-vo9p96qlo4v2vrsmlctapt6tbhktd9lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
