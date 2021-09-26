@@ -40,7 +40,7 @@ class AdaptadorMateria(
             popMenu.setOnMenuItemClickListener {
 
                 when(it.itemId){
-                    //EDITA CTM
+                    //EDITA
                     R.id.menuEditarMateria -> {
                         val intetExplicito = Intent( context,FormularioActualizarMateria:: class.java )
                         intetExplicito.putExtra("id",idItem)
@@ -81,17 +81,6 @@ class AdaptadorMateria(
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(
             R.layout.lista_materias,
