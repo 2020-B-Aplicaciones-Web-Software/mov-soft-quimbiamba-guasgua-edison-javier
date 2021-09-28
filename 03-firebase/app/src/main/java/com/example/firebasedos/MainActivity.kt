@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.auth.api.Auth
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         botonLogin.setOnClickListener {
             llamarLoginUsuario()
         }
+
     }
 
     fun llamarLoginUsuario() {
@@ -52,9 +54,13 @@ class MainActivity : AppCompatActivity() {
                         if (usuario.isNewUser == true) {
                             Log.i("firebase-login", "Nuevo usuario")
                             registrarUsuarioPorPrimeraVez(usuario)
+                            setBienvenida()
+
                         } else {
 
                             Log.i("firebase-login", "Usuario antiguo")
+                            setearUsuario()
+                            setBienvenida()
                         }
                     } else {
                         Log.i("firebase-login", "El usuario cancelo")
@@ -76,13 +82,16 @@ class MainActivity : AppCompatActivity() {
             val rolesUsuario = arrayListOf("usuario") // creamos el arreglo de permisos
             val nuevoUsuario = hashMapOf<String, Any>(
                 "roles" to rolesUsuario,
-                "uid" to usuarioLogeado.uid
+                "uid" to usuarioLogeado.uid,
+                "email" to usuario.email.toString()
             )
+            val identificadorUsuario = usuario.email   // Seleccionamos  que el identificador del usuario  sea  el correof
 
-            db.collection("usuario")
-                .add(nuevoUsuario)
+            db.collection("usuario").document(identificadorUsuario.toString())
+                .set(nuevoUsuario)
                 .addOnSuccessListener {
                     Log.i("fire-firestore", "Se creo")
+                    setearUsuario()
                 }
                 .addOnFailureListener {
                     Log.i("firebase-firestore", "fallo")
@@ -90,5 +99,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //instancia  de la autenticación luego  obtenemos el usuario local, si es que el usuario  local es diferene  de nulo entonces ahi vamos a empezar a  trabajar
 
+
+    fun setearUsuario(){
+        val instanciaAuth = FirebaseAuth.getInstance()
+        val usuarioLocal = instanciaAuth.currentUser
+        if( usuarioLocal != null){
+            if(usuarioLocal.email != null){
+                val  db = Firebase.firestore
+                val referencia = db.collection("usuario")
+                    .document(usuarioLocal.email.toString())
+
+            }
+        }
+    }
+
+    fun setBienvenida (){
+        val textViewBienvenida = findViewById<TextView>(R.id.tv_bienvenida)
+        if(BAuthUsuario.usuario != null){
+            textViewBienvenida.text = "Bienvenido  ${
+                BAuthUsuario.usuario?.email
+            }"
+
+        }else{
+            textViewBienvenida.text = "Ingrese al aplicativo"
+        }
+    }
 }
