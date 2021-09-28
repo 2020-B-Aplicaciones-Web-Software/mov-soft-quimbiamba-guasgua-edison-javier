@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "875632926239",
+    "project_id": "movsoft-2021a-quigua",
+    "storage_bucket": "movsoft-2021a-quigua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875632926239:android:642db1edef93c69f3ebf2a",
+        "android_client_info": {
+          "package_name": "com.example.firebase1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875632926239-lqlpte3tlein7uur3umnlii9jhgskdah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJeQPEO9FEjKV8yYIvS6_Dbkf-VqdohwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875632926239-lqlpte3tlein7uur3umnlii9jhgskdah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

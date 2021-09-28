@@ -14,11 +14,9 @@ class FormularioMateria : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_materia)
-
         val btnGuardarMateria =  findViewById<Button>(R.id.btn_guardar_materia)
         btnGuardarMateria.setOnClickListener {
             guardarMateria()
-
         }
     }
     private fun guardarMateria() {
@@ -52,6 +50,8 @@ class FormularioMateria : AppCompatActivity() {
         }
     }
 
+
+    
     fun abrirActividad(
         clase: Class<*>
     ){
@@ -62,4 +62,3 @@ class FormularioMateria : AppCompatActivity() {
         this.startActivity(intendExplicito);
     }
 }
-
