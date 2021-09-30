@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Deberes/AplicacionesMoviles/mov-soft-quimbiamba-guasgua-edison-javier/03-firebase/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Deberes/AplicacionesMoviles/mov-soft-quimbiamba-guasgua-edison-javier/03-firebase/app/src/main/res/layout/activity_cproducto.xml" value="0.19375" />
+        <entry key="..\:/Deberes/AplicacionesMoviles/mov-soft-quimbiamba-guasgua-edison-javier/03-firebase/app/src/main/res/layout/activity_drestauante.xml" value="0.18125" />
+        <entry key="..\:/Deberes/AplicacionesMoviles/mov-soft-quimbiamba-guasgua-edison-javier/03-firebase/app/src/main/res/layout/activity_main.xml" value="0.2" />
       </map>
     </option>
   </component>
