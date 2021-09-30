@@ -5,15 +5,15 @@ import android.os.Parcelable
 import java.lang.StringBuilder
 
 class EstudianteDto(
-    var idMateria: String? = null,
-    var numeroUnico: String?  = null,
-    var cedula: String? = null,
-    var nombre: String? = null,
     var carrera:String? = null,
-    var fechaNacimiento:String?= null,
+    var cedula: String? = null,
     var estado: String? = null,
+    var fechaNacimiento:String?= null,
+    var idMateria: String? = null,
     var latitud: Double? = null,
     var longitud: Double? = null,
+    var nombre: String? = null,
+    var numeroUnico: String?  = null,
     var uid: String? = null
 ):Parcelable{
     constructor(parcel:Parcel) : this (
@@ -22,10 +22,10 @@ class EstudianteDto(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
         parcel.readDouble(),
         parcel.readDouble(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readString(),
             ){
     }
