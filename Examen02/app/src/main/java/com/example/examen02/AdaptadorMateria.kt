@@ -14,6 +14,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examen02.Dto.EstudianteDto
 import com.example.examen02.Dto.MateriaDto
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class AdaptadorMateria(
     private val listMateria: ArrayList<MateriaDto>,
@@ -27,11 +30,87 @@ class AdaptadorMateria(
         var aulaTextView: TextView = view.findViewById(R.id.txv_carrera)
         var creditosTextView: TextView = view.findViewById(R.id.txv_cedula)
         var layoutMateria: ConstraintLayout = view.findViewById(R.id.vistaMaterias)
+
         init {
-            layoutMateria.setOnClickListener{
-                //menuContextual(it)
+            layoutMateria.setOnClickListener {
+                menuContextual(it)
             }
         }
+
+        private fun menuContextual(v: View) {
+
+            var registroMateria: (MutableList<DocumentSnapshot>) // Tipo de variable de firebase
+            var listaMateria = ArrayList<MateriaDto>()
+            val db = Firebase.firestore
+            val refereciaMateria = db.collection("materia")
+            refereciaMateria.get().addOnSuccessListener {
+                registroMateria = it.documents
+                registroMateria.forEach { iteracion ->
+                    val objMateria = iteracion.toObject(MateriaDto::class.java)
+                    objMateria!!.uid = iteracion.id
+                    objMateria.codigo = iteracion.get("codigo").toString()
+                    objMateria.nombre = iteracion.get("nombre").toString()
+                    objMateria.creditos = iteracion.get("creditos").toString().toInt()
+                    objMateria.aula = iteracion.get("aula").toString()
+                    listaMateria.add(objMateria)
+                }
+
+                val idItem =
+                    listaMateria[adapterPosition] // Retorna el numero  de la posición que se encuentrar  el adaptado en ese momento
+                //valor  que entraga  del que estoy dando  click
+                val popMenu = PopupMenu(context, v)
+                popMenu.inflate(R.menu.menu_materias)
+                popMenu.setOnMenuItemClickListener {
+                    when (it.itemId) {
+
+                        R.id.menuEditarMateria -> {
+                            val intetExplicito =
+                                Intent(context, FormularioActualizarMateria::class.java)
+                            intetExplicito.putExtra("id", idItem)
+                            context.startActivity(intetExplicito)
+                            context.finish()
+                            Toast.makeText(context, "Editar Cliked", Toast.LENGTH_SHORT).show()
+                            true
+                        }
+                        R.id.menuEliminarMateria -> {
+                            val builder = AlertDialog.Builder(context)
+                            builder.setTitle("Atento oe")
+                            builder.setTitle("Estas seguro de eliminar la materia")
+                            builder.setPositiveButton(
+                                "Si",
+                                DialogInterface.OnClickListener { dialog, which ->
+                                    refereciaMateria.document(idItem.uid.toString()).delete()
+                                        .addOnSuccessListener {
+                                            Toast.makeText(
+                                                context,
+                                                "Eliminar clicked-- ${adapterPosition}",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                            context.finish()
+                                            context.startActivity(
+                                                Intent(
+                                                    context, MateriaActivity::class.java
+                                                )
+
+                                            )
+
+
+                                        }
+                                }
+                            )
+                            builder.setNegativeButton("Cancelar", null)
+                            val dialog = builder.create()
+                            dialog.show()
+                            true
+                        } else -> true
+                    }
+                }
+                popMenu.show()
+
+            }
+
+        }
+
 
         /*private fun menuContextual(view: View) {
             BaseDatos.tablaMateria = SQLiteHelperEstudiante(context)
@@ -100,6 +179,7 @@ class AdaptadorMateria(
         holder.aulaTextView.text = materia.aula
         holder.creditosTextView.text = materia.creditos.toString()
     }
+
     override fun getItemCount(): Int {
         return listMateria.size
     }
@@ -108,8 +188,8 @@ class AdaptadorMateria(
         lista: ArrayList<EstudianteDto>,
         activity: EstudianteActivity,
         recyclerView: RecyclerView
-    ){
-        val adaptador  = AdaptorEstudiante(
+    ) {
+        val adaptador = AdaptorEstudiante(
             activity, lista, recyclerView
         )
         recyclerView.adapter = adaptador
@@ -117,9 +197,6 @@ class AdaptadorMateria(
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
         adaptador.notifyDataSetChanged()
     }
-
-
-
 
 
 }
