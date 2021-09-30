@@ -43,15 +43,13 @@ class FormularioMateria : AppCompatActivity() {
             editTextCreditos.text.clear()
             editTextAula.text.clear()
 
-            Toast.makeText( this, "Has ingresedo un materia ve :v ",Toast.LENGTH_SHORT).show()
+            Toast.makeText( this, "Registro exitoso de una materia",Toast.LENGTH_SHORT).show()
             this.finish()
         }.addOnFailureListener{
-            Toast.makeText(this, "Algo  salio mal mmmv", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No se ha podido registrar", Toast.LENGTH_SHORT).show()
         }
     }
 
-
-    
     fun abrirActividad(
         clase: Class<*>
     ){

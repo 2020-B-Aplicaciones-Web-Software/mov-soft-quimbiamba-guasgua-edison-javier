@@ -28,8 +28,4 @@ class MainActivity : AppCompatActivity() {
         this.startActivity(intentExplicito)
     }
 
-
-
-
-
 }

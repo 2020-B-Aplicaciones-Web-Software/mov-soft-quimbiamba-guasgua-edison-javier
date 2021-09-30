@@ -11,17 +11,11 @@ class DRestauante : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drestauante)
-
         val botonCrearRestaurante = findViewById<Button>( R.id.btn_crear_restaurante)
             botonCrearRestaurante.setOnClickListener {
-
                 crearRestaurante()
             }
-
-
-
     }
-
     private fun crearRestaurante() {
         val editTextNombre = findViewById<EditText>(R.id.et_nombre_restaurante)
         val nuevoRestauante = hashMapOf<String,Any>(
