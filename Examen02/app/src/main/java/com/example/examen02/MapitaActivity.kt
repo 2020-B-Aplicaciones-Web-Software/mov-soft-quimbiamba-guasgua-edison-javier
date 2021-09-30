@@ -27,10 +27,10 @@ class MapitaActivity : AppCompatActivity() {
         fragmentoMapa.getMapAsync {
             mapa = it
             establecerConfiguracionMapa()
-            /*val latitud = -0.145522
-            val longitud = -78.503101*/
-            val latitud = itemId?.latitud!!.toDouble()
-            val longitud = itemId?.longitud!!.toDouble()
+            val latitud = -0.145522
+            val longitud = -78.503101
+            //val latitud = itemId?.latitud!!.toDouble()
+            //val longitud = itemId?.longitud!!.toDouble()
 
             val ubicacion = LatLng(latitud, longitud)
             val zoom = 12f

@@ -34,7 +34,7 @@ class EstudianteActivity : AppCompatActivity() {
                 objEstudiante!!.uid = iteracion.id
                 objEstudiante!!.carrera = iteracion.get("carrera").toString()
                 objEstudiante!!.cedula = iteracion.get("cedula").toString()
-                objEstudiante!!.estado = iteracion.get("estado").toString().toBoolean()
+                objEstudiante!!.estado = iteracion.get("estado").toString()
                 objEstudiante!!.fechaNacimiento = iteracion.get("fecha").toString()
                 objEstudiante!!.idMateria = iteracion.get("materia").toString()
                 objEstudiante!!.latitud = iteracion.get("latitud") as Double?

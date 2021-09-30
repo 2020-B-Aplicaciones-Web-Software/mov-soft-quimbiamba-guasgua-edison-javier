@@ -11,7 +11,7 @@ class EstudianteDto(
     var nombre: String? = null,
     var carrera:String? = null,
     var fechaNacimiento:String?= null,
-    var estado: Boolean? = null,
+    var estado: String? = null,
     var latitud: Double? = null,
     var longitud: Double? = null,
     var uid: String? = null
@@ -23,7 +23,7 @@ class EstudianteDto(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readByte() != 0.toByte(),
+        parcel.readString(),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readString(),
@@ -40,7 +40,7 @@ class EstudianteDto(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(carrera)
         parcel.writeString(cedula)
-        parcel.writeByte(if (estado!!) 1 else 0)
+        parcel.writeString(estado)
         parcel.writeString(fechaNacimiento)
         parcel.writeString(idMateria)
         parcel.writeDouble(latitud!!)
