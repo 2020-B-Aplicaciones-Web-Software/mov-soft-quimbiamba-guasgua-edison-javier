@@ -8,23 +8,23 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="89dp"
-        android:layout_height="48dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         app:helperText="id Materia: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061">
+        app:layout_constraintVertical_bias="0.223">
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
-        android:layout_width="95dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         app:helperText="N° Unico"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,22 +35,22 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_cedula"
-        android:layout_width="204dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout6"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout6"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout6"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/input_numeroUnico"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_numeroUnico"
+        app:layout_constraintTop_toBottomOf="@+id/input_numeroUnico" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
-        android:layout_width="130dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         app:helperText="Cedula:"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
-        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
@@ -58,29 +58,30 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_numeroUnico"
-        android:layout_width="219dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout5"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout5"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout5"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/input_idMateria"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_idMateria"
+        app:layout_constraintTop_toBottomOf="@+id/input_idMateria" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_idMateria"
-        android:layout_width="225dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
-        android:layout_width="129dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         app:helperText="Nombre:"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
         app:layout_constraintHorizontal_bias="0.0"
@@ -91,22 +92,20 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_nombre"
-        android:layout_width="201dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout7"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout7"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout7"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/input_cedula"
+        app:layout_constraintTop_toBottomOf="@+id/input_cedula" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout8"
-        android:layout_width="132dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         app:helperText="Carrera:"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
@@ -114,19 +113,19 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_carrera"
-        android:layout_width="192dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout8"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout8"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout8"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/input_nombre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/input_nombre" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout9"
-        android:layout_width="138dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         app:helperText="Fecha de Nacimiento:"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
         app:layout_constraintHorizontal_bias="1.0"
@@ -137,19 +136,19 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_fechaNacimiento"
-        android:layout_width="196dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout9"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout9"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout9"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/input_carrera"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_carrera"
+        app:layout_constraintTop_toBottomOf="@+id/input_carrera" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout10"
-        android:layout_width="138dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         app:helperText="Estado: "
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout9"
         app:layout_constraintHorizontal_bias="0.0"
@@ -160,34 +159,59 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_estado"
-        android:layout_width="198dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout10"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout10"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout10"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_fechaNacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/input_fechaNacimiento" />
 
     <Button
         android:id="@+id/btn_guardar_estudiante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="164dp"
         android:text="Guardar"
-        app:layout_constraintEnd_toEndOf="@+id/input_estado"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout10"
-        app:layout_constraintTop_toBottomOf="@+id/input_estado" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <Spinner
         android:id="@+id/spUbicacionEstudiante"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="203dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.885" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">>Registro de Estudiante"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="158dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@drawable/registroestudiante" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
